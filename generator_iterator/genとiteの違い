@@ -1,0 +1,7 @@
+generatorとiteratorの違い
+・generatorはiteratorの一種
+・generatorは関数で定義する
+・iteratorはクラスで定義する
+・generatorはyieldを使う
+・iteratorはyieldを使わない
+・使い方は同じ
