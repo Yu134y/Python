@@ -1,21 +1,9 @@
-"""sample_pj URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path
+from django.urls import path, include  # URL指定およびアプリケーション別URL定義指定用関数のインポート
+from django.contrib import admin  # 管理サイト設定用インポート
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),  # 管理サイトのURL設定
+    path('text/',  # アプリケーション別URL
+         include('text_app.urls')),  # アプリケーション別URL定義モジュールの指定
+    path('myapp/', include('my_app.urls')),
 ]
