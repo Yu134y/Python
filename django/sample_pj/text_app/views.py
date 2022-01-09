@@ -97,3 +97,48 @@ class SampleFormView(generic.FormView):
     template_name = 'sample_form.html'  # テンプレートファイル（HTMLファイル）のパス
     form_class = SampleForm  # テンプレートで表示するフォームクラス名
     success_url = reverse_lazy('text_app:form_ok')  # アプリケーション名（app_name）：逆引き名（path関数のname引数で指定した名前）
+
+
+# View関数によるFormデータの取得
+def post_form(request):
+    ctx = {}
+    if request.method == 'post':  # 送信メソッドがPOSTだった場合
+        f = SampleForm(request.POST)  # POSTデータからFormオブジェクトの生成
+        # cleaned_dataオブジェクトからデータの取得
+        if f.is_valid():  # 入力チェックOK時の処理
+            name = f.cleaned_data['name']  # 文字列型で変換済み
+            password = f.cleaned_data['password']  # 文字列型で変換済み
+            age = f.cleaned_data['age']  # 整数型で変換済み
+            birthday = f.cleaned_data['birthday']  # datetime型で変換済み
+            # 取得した入力データを利用した処理
+            ctx['msg'] = (name, password, age, birthday)
+        else:  # 入力チェックNG時の処理
+            ctx['msg'] = '入力エラーがあります'
+    else:  # 送信メソッドがGETの場合（初回アクセス時）
+        f = SampleForm()
+    ctx['form'] = f
+    return render(request, 'sample_form.html', ctx)
+
+
+# 汎用クラスによるFormデータの取得
+# generic.FormViewのサブクラスを作成する
+class SampleFormView2(generic.FormView):
+    template_name = 'sample_form.html'
+    form_class = SampleForm
+
+    # 入力チェックOK時の処理
+    def form_valid(self, form):
+        # cleaned_dataオブジェクトからデータの取得
+        name = form.cleaned_data['name']
+        password = form.cleaned_data['password']  # 文字列型で変換済み
+        age = form.cleaned_data['age']  # 整数型で変換済み
+        birthday = form.cleaned_data['birthday']  # datetime型で変換済み
+        # 取得した入力データを利用した処理
+        ctx = {'form': form, 'msg': (name, password, age, birthday)}
+        # コンテキストを渡すためsuccess_urlを指定せず、render関数で画面遷移
+        return render(self.request, self.template_name, ctx)
+
+    # 入力チェックNG時の処理
+    def form_invalid(self, form):
+        ctx = {'form': form, 'msg': '入力エラーがあります'}
+        return render(self.request, self.template_name, ctx)
