@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>フォームサンプル2</title>
+</head>
+<body>
+<form method="post" novalidate>
+  {% csrf_token %}
+  <table>
+    {{ form }}
+  </table>
+  <button type="submit">計算</button>
+</form>
+<div>
+  {% if result %}
+  <h2>
+    {{ form.param1.label }} {{ symbol }} {{ form.param2.label }} の結果
+  </h2>
+  {{ param1 }} {{ symbol }} {{ param2 }} = {{ result }}
+  {% endif %}
+</div>
+</body>
+</html>

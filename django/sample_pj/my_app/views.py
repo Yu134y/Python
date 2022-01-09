@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 from django.http import HttpResponse
-from my_app.forms import MyAppForm
+from my_app.forms import MyAppForm, MyAppForm2
 
 
 def call_sample(request):
@@ -62,3 +62,33 @@ class MyAppFormView(generic.FormView):
     template_name = 'form01.html'
     form_class = MyAppForm
     success_url = reverse_lazy('my_app:form01')
+
+
+class MyAppFormView2(generic.FormView):
+    template_name = 'form02.html'
+    form_class = MyAppForm2
+
+    def form_valid(self, form):
+        param1 = form.cleaned_data['param1']
+        param2 = form.cleaned_data['param2']
+        operator = form.cleaned_data['operator']
+        if operator == '0':
+            symbol = '+'
+            result = int(param1) + int(param2)
+        elif operator == '1':
+            symbol = '-'
+            result = int(param1) - int(param2)
+        elif operator == '2':
+            symbol = '×'
+            result = int(param1) * int(param2)
+        else:
+            symbol = '÷'
+            result = int(param1) / int(param2)
+        context = {
+            'form': form,
+            'param1': param1,
+            'param2': param2,
+            'symbol': symbol,
+            'result': result
+        }
+        return render(self.request, self.template_name, context)

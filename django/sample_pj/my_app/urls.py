@@ -18,5 +18,6 @@ urlpatterns = [
     path('multi_f2/', views.param_multiply_form2, name='multi_f2'),
     path('multi_i3/', generic.TemplateView.as_view(template_name='multi_input3.html'), name='multi_input3'),
     path('multi_f3/', views.param_multiply_form3, name='multi_f3'),
-    path('form01/', views.MyAppFormView.as_view(template_name='form01.html'), name='form01')
+    path('form01/', views.MyAppFormView.as_view(template_name='form01.html'), name='form01'),
+    path('form02/', views.MyAppFormView2.as_view(), name='form02'),
 ]

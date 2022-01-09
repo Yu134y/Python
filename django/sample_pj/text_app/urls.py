@@ -37,4 +37,6 @@ urlpatterns = [
     path('sample_form/', views.disp_form, name='disp_form'),
     path('sample_form_v/', views.SampleFormView.as_view(), name='disp_form2'),
     path('form_ok/', generic.TemplateView.as_view(template_name='form_ok.html'), name='form_ok'),
+    path('sample_valid/', views.post_form, name='post_form'),
+    path('sample_valid_v/', views.SampleFormView2.as_view(), name='post_form2'),
 ]
