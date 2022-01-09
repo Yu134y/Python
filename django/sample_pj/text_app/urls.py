@@ -27,5 +27,14 @@ urlpatterns = [
     path('input/', generic.TemplateView.as_view(template_name='input.html'), name='input'),
     path('get_form1/', views.get_form_p1, name='form01'),
     path('input2/', generic.TemplateView.as_view(template_name='input2.html'), name='input2'),
-    path('get_form2/', views.get_form_p2, name='form02')
+    path('get_form2/', views.get_form_p2, name='form02'),
+    path('output/', views.set_context_render, name='ctx_01'),
+    path('output2/', views.SampleContextTemplateView.as_view(), name='ctx_02'),
+    path('in_out01/', generic.TemplateView.as_view(template_name='in_out.html'), name='in_out01'),
+    path('in_out02/', views.get_form_p3, name='in_out02'),
+    path('parents/', generic.TemplateView.as_view(template_name='parents.html'), name='parents'),
+    path('child/', generic.TemplateView.as_view(template_name='child.html'), name='child'),
+    path('sample_form/', views.disp_form, name='disp_form'),
+    path('sample_form_v/', views.SampleFormView.as_view(), name='disp_form2'),
+    path('form_ok/', generic.TemplateView.as_view(template_name='form_ok.html'), name='form_ok'),
 ]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>フォームによる入力値の取得</title>
+</head>
+<body>
+<h2>フォームを利用した入力値の取得</h2>
+<form method="post" action="{% url '/myapp/multi_f3/' %}">
+  {% csrf_token %}
+  数値1:<input type="text" name="param1" /><br>
+  演算子:<select name="operator">
+    <option value="0">+</option>
+    <option value="1">-</option>
+    <option value="2">×</option>
+    <option value="3">÷</option>
+  </select><br>
+  数値2:<input type="text" name="param2" /><br>
+  <button type="submit">送信</button>
+</form>
+</body>
+</html>

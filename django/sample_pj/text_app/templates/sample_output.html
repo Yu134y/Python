@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>コンテキストリストの表示</h3>
+<ul>
+    <!--　変数の出力　-->
+    <li>sample = {{ sample }}</li>
+    <li>sampleList[0] = {{ sampleList.0 }}</li>
+    <li>sampleList[1] = {{ sampleList.1 }}</li>
+    <li>sampleList[2] = {{ sampleList.2 }}</li>
+    <!-- 変数のフィルタリング -->
+    <li>sample = {{ sample2|default:'sample2 is not found' }}</li>
+    <!-- テンプレートタグ -->
+    {% for e in sampleList %}
+    <li>リスト要素 => {{ e }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
