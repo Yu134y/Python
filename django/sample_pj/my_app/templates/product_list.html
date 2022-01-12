@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>フォームサンプル</title>
+</head>
+<body>
+  <h1>Product一覧表示</h1>
+  <table border="1">
+    <tr>
+      <th>商品名</th>
+      <th>単価</th>
+      <th>発売日</th>
+    </tr>
+    {% for product in object_list %}
+    <tr>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.release_date|date:'Y年m月d日' }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

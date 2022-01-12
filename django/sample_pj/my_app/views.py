@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 from django.http import HttpResponse
-from my_app.forms import MyAppForm, MyAppForm2
+from my_app.forms import MyAppForm, MyAppForm2, ProductModelForm
+from my_app.models import Product
 
 
 def call_sample(request):
@@ -92,3 +93,37 @@ class MyAppFormView2(generic.FormView):
             'result': result
         }
         return render(self.request, self.template_name, context)
+
+
+class ProductListView(generic.ListView):
+    template_name = 'product_list.html'
+    model = Product
+
+
+class ProductDetailView(generic.DetailView):
+    template_name = 'product_detail.html'
+    model = Product
+
+
+class ProductCreateView(generic.CreateView):
+    template_name = 'product_create.html'
+    model = Product
+    # fields = ('name', 'price', 'release_date')
+    form_class = ProductModelForm
+    success_url = reverse_lazy('my_app:product_all')
+
+
+class ProductUpdateView(generic.UpdateView):
+    template_name = 'product_update.html'
+    model = Product
+    # fields = ('name', 'price', 'release_date')
+    form_class = ProductModelForm
+
+    def get_success_url(self):
+        return reverse_lazy('my_app:product_detail', kwargs={'pk':self.object.id})
+
+
+class ProductDeleteView(generic.DeleteView):
+    template_name = 'product_delete.html'
+    model = Product
+    success_url = reverse_lazy('my_app:product_all')

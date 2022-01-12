@@ -1,4 +1,5 @@
 from django import forms
+from my_app.models import Product
 
 
 class MyAppForm(forms.Form):
@@ -24,3 +25,12 @@ class MyAppForm2(forms.Form):
         param2 = self.cleaned_data['param2']
         if operator == '3' and param2 == 0:
             raise forms.ValidationError('割り算の場合は数値2に0を入力できません')
+
+
+class ProductModelForm(forms.ModelForm):
+    price = forms.IntegerField(min_value=0, label='単価')
+
+    class Meta:
+        model = Product
+        fields = ('name', 'price', 'release_date')
+        labels = {'name': '商品名', 'release_date': '発売日'}

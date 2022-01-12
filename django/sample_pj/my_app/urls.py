@@ -20,4 +20,9 @@ urlpatterns = [
     path('multi_f3/', views.param_multiply_form3, name='multi_f3'),
     path('form01/', views.MyAppFormView.as_view(template_name='form01.html'), name='form01'),
     path('form02/', views.MyAppFormView2.as_view(), name='form02'),
+    path('products/', views.ProductListView.as_view(), name='product_all'),
+    path('products/<int:pk>/', views.ProductDetailView.as_view(), name='product_detail'),
+    path('products/add/', views.ProductCreateView.as_view(), name='product_add'),
+    path('products/<int:pk>/update/', views.ProductUpdateView.as_view(), name='product_update'),
+    path('products/<int:pk>/delete/', views.ProductDeleteView.as_view(), name='product_delete'),
 ]

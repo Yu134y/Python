@@ -1,8 +1,9 @@
 from django.http import HttpResponse  # Httpレスポンスクラスのインポート
 from django.shortcuts import render, redirect  # テンプレート呼び出し用ショートカット関数のインポート
 from django.views import generic  # 汎用クラスモジュールのインポート
-from text_app.forms import SampleForm
+from text_app.forms import SampleForm, CustomerModelForm
 from django.urls import reverse_lazy  # URL逆引き関数のインポート
+from text_app.models import Customer
 
 
 # def welcome(request):
@@ -142,3 +143,44 @@ class SampleFormView2(generic.FormView):
     def form_invalid(self, form):
         ctx = {'form': form, 'msg': '入力エラーがあります'}
         return render(self.request, self.template_name, ctx)
+
+
+# ListViewによる一覧表示
+class CustomerListView(generic.ListView):
+    template_name = 'customer_list.html'
+    model = Customer
+
+
+# DetailViewの作成
+class CustomerDetailView(generic.DetailView):
+    template_name = 'customer_detail.html'
+    model = Customer
+
+
+# CreateViewの作成
+# ModelFormを利用した場合、更新系汎用Viewではfieldsではなく、form_classを使う
+class CustomerCreateView(generic.CreateView):
+    template_name = 'customer_create.html'
+    model = Customer
+    # fields = ('name', 'age')  ModelFormを指定したため、不要
+    form_class = CustomerModelForm
+    success_url = reverse_lazy('text_app:customer_all')  # 一覧表示へリダイレクト
+
+
+# UpdateViewによる更新
+class CustomerUpdateView(generic.UpdateView):
+    template_name = 'customer_update.html'
+    model = Customer
+    fields = ('name', 'age')
+
+    # 更新後、DetailViewで更新結果を表示
+    def get_success_url(self):
+        return reverse_lazy('text_app:customer_detail',
+                            kwargs={'pk': self.object.id})  # self.object.idで主キー(ID)を取得
+
+
+# DeleteViewによる削除
+class CustomerDeleteView(generic.DeleteView):
+    template_name = 'customer_delete.html'
+    model = Customer
+    success_url = reverse_lazy('text_app:customer_all')  # 一覧表示へ戻る

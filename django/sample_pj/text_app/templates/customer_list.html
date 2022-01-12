@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ListViewによる一覧表示</title>
+</head>
+<body>
+  <h1>Customer一覧表示</h1>
+  <table border="1">
+    <tr>
+      <th>名前</th>
+      <th>年齢</th>
+    </tr>
+    {% for customer in object_list %}
+    <tr>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.age }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
