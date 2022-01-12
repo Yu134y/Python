@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>商品詳細</title>
+</head>
+<body>
+  <h1>Product詳細表示</h1>
+  <table border="1">
+    <tr>
+      <th>商品名</th>
+      <td>{{ product.name }}</td>
+    </tr>
+    <tr>
+      <th>単価</th>
+      <td>{{ product.price }}</td>
+    </tr>
+    <tr>
+      <th>発売日</th>
+      <td>{{ product.release_date|date:'Y年m月d日' }}</td>
+    </tr>
+  </table>
+</body>
+</html>
