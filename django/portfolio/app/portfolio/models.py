@@ -35,6 +35,12 @@ class Skill(models.Model):
     years = models.FloatField('経験年数', default=0)
     description = models.ForeignKey(Description, on_delete=models.SET_NULL, null=True, verbose_name='説明文')
 
+    def years_rounded(self):
+        years = self.years
+        if years.is_integer():
+            years = int(years)
+        return years
+
     def __str__(self):
         return self.name
     
