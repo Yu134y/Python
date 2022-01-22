@@ -35,3 +35,9 @@
 .mb-100 {
   margin-bottom: 100px;
 }
+
+.left-top {
+  position: absolute;
+  left: 40px;
+  top: 24px;
+}
