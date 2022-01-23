@@ -18,6 +18,15 @@
   font-size: 16px;
 }
 
+.font-20 {
+  font-size: 20px;
+}
+
+.bottom-fixed {
+  position: fixed;
+  bottom: 32px;
+}
+
 .logo-font {
   font-family: "Redressed", cursive;
 }
@@ -103,6 +112,91 @@ a {
 
 .article:hover .article-title {
   color: #3771a2;
+}
+
+.pt-100 {
+  padding-top: 100px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.article-body * {
+  color: #4a4a4a;
+  line-height: 1.7;
+  letter-spacing: 1.5px;
+}
+
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  color: #222;
+  font-weight: 700;
+}
+
+.article-body p,
+.article-body li {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.article-body h1 {
+  font-size: 32px;
+}
+
+.article-body h2 {
+  font-size: 30px;
+}
+
+.article-body h3 {
+  font-size: 28px;
+}
+
+.article-body h4 {
+  font-size: 24px;
+}
+
+.article-body h5 {
+  font-size: 22px;
+}
+
+.article-body h6 {
+  font-size: 20px;
+}
+
+.article-body img {
+  max-width: 100%;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.sns-icon {
+  font-size: 24px;
+  padding: 0 8px;
+}
+
+.sns-icon-xl {
+  font-size: 32px;
+  padding: 0 16px;
+}
+
+.text-twitter {
+  color: #55acee;
+}
+
+.text-facebook {
+  color: #3b5998;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
