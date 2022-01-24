@@ -6,12 +6,20 @@
   font-size: 40px;
 }
 
-.text-dark-right {
+.text-dark-light {
   color: #4a4a4a;
 }
 
 .text-blue {
   color: #00bfff;
+}
+
+.border-blue {
+  border-color: #b0c4de;
+}
+
+.bg-lightgray {
+  background-color: #dfdfdf;
 }
 
 .bg-gradient {
@@ -44,6 +52,15 @@ footer {
   width: 100%;
 }
 
+.form-control::placeholder {
+  color: #666;
+}
+
+.form-control:focus {
+  border: rgba(122, 122, 122, 0.4);
+  box-shadow: none;
+}
+
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
