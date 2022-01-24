@@ -1,0 +1,49 @@
+.font-20 {
+  font-size: 20px;
+}
+
+.font-40 {
+  font-size: 40px;
+}
+
+.text-dark-right {
+  color: #4a4a4a;
+}
+
+.text-blue {
+  color: #00bfff;
+}
+
+.bg-gradient {
+  background: linear-gradient(45deg, #b0c4de, #00bfff);
+}
+
+.wrapper {
+  min-height: 100vh;
+}
+
+.todo-title {
+  font-size: 18px;
+}
+
+.plus-btn {
+  position: fixed;
+  bottom: 64px;
+  right: 64px;
+  border-radius: 48px;
+}
+
+.plus-icon {
+  padding: 24px;
+  display: inline-block;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
