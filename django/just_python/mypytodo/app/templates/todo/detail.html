@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% load static %} {% block main %}
+
+<section>
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-11 col-lg-8 mx-auto mb-3">
+        <div class="card border rounded-pill py-2 text-dark-light px-4">
+          <p class="mb-0 font-20">タイトル： {{ todo.title }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-11 col-lg-8 mx-auto mb-3">
+        <div class="card border rounded-pill py-2 text-dark-light px-4">
+          <p class="mb-0 font-20">詳細/内容： {{ todo.body|linebreaksbr }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-11 col-lg-8 mx-auto mb-3">
+        <div class="card border rounded-pill py-2 text-dark-light px-4">
+          <span class="mb-0 font-20"
+            >作成日時： {{ todo.created|date:'Y/m/d H:i' }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="text-right">
+          <a href="{% url 'todo:todo_update' todo.pk %}" class="btn bg-white shadow text-blue border-blue"
+            >編集する</a
+          >
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="text-left">
+          <a
+            href="{% url 'todo:index' %}"
+            class="btn bg-lightgray shadow text-darkk-light border-blue"
+            >戻る</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
