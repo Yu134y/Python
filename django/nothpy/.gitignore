@@ -1,7 +1,0 @@
-.env
-db.sqlite3
-media
-*.log
-*.pot
-*.pyc
-__pycache__/
