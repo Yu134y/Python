@@ -195,12 +195,12 @@
                 <div class="section-heading">
                     {% for post in posts %}
                     <h1>{{ post.title }} <small>Written by: </small><span>{{ post.author }}</span></h1>
-                    <p class="subheading">{{ post.date_posted }}</p>
+                    <p class="subheading">{{ post.date_posted|date:'Y-m-d P' }}</p>
 
                     <ul class="aboutul">
-                        <li><i class="fa fa-check"></i>{{ post.content }}
-                        </li>
+                        <li><i class="fa fa-check"></i>{{ post.content }}</li>
                     </ul>
+                    <hr>
                     {% endfor %}
                 </div>
 
