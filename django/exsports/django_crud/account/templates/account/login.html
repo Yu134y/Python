@@ -22,19 +22,10 @@
         <div class="row">
             <div class="col-md-6 col-sm-12 forms-right-icons">
                 <div class="section-heading">
-                    <h2>Sign Up With <span>Us</span></h2>
+                    <h2>Sign In With <span>Us</span></h2>
                     <p class="subheading">Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique
-                        fierentis ea saperet inimicu ut qui dolor oratio mnesarchum ea utamur impetus fuisset nam
-                        nostrud euismod volumus ne mei.
+                        fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.
                     </p>
-                </div>
-                <div class="row">
-                    <div class="col-xs-2 icon"><i class="fa fa-laptop"></i></div>
-                    <div class="col-xs-10 datablock">
-                        <h4>100% Responsive</h4>
-                        <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea
-                            saperet inimicu ut qui dolor oratio mnesarchum.</p>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-2 icon"><i class="fa fa-bullhorn"></i></div>
@@ -54,30 +45,39 @@
                 </div>
 
             </div>
-            <!--forms-right-icons-->
             <div class="col-md-6 col-sm-12">
+
                 <div class="form-box">
                     <div class="form-top">
                         <div class="form-top-left">
-                            <h3>Sign up now</h3>
-                            <p>Fill in the form below to get instant access</p>
+                            <h3>Login to our site</h3>
+                            <p>Enter username and password to log on:</p>
                         </div>
                         <div class="form-top-right">
-                            <i class="fa fa-pencil"></i>
+                            <i class="fa fa-key"></i>
                         </div>
                     </div>
                     <div class="form-bottom">
                         <form method="POST" role="form" action="" class="login-form">
                             {% csrf_token %}
                             {{ form|crispy }}
-                            <button type="submit" class="btn">Sign me up!</button>
+                            <button type="submit" class="btn">Log In!</button>
                         </form>
-                        <style>
-                            #hint_id_username,
-                            #hint_id_password1 {
-                              display: none;
-                            }
-                        </style>
+                    </div>
+                </div>
+
+                <div class="social-login">
+                    <h3>...or login with:</h3>
+                    <div class="social-login-buttons">
+                        <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+                            <i class="fa fa-facebook"></i> Facebook
+                        </a>
+                        <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                        <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                            <i class="fa fa-google-plus"></i> Google Plus
+                        </a>
                     </div>
                 </div>
             </div>
@@ -126,7 +126,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3 col-sm-3 col-xs-12 <block></block>">
+            <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="footer-block">
                     <h4>Recent Posts</h4>
                     <hr/>
@@ -182,5 +182,7 @@
     </div>
     <a class="open" href="#"><span><i class="fa fa-gear fa-spin"></i></span></a>
 </div>
+
 {% endblock %}
+
 </body>
