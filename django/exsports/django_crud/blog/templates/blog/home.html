@@ -122,8 +122,9 @@
         <div class="col-md-7 col-md-offset-5 col-sm-8 col-sm-offset-2 col-xs-12 text-inner ">
             <div class="text-block">
                 <div class="section-heading">
+
                     {% for post in posts %}
-                    <h1>{{ post.title }} <small>Written by: </small><span>{{ post.author }}</span></h1>
+                    <h1><a href="{% url 'post-detail' post.id %}">{{ post.title }} </a><small>Written by: </small><span>{{ post.author }}</span></h1>
                     <p class="subheading">{{ post.date_posted|date:'Y-m-d P' }}</p>
 
                     <ul class="aboutul">
@@ -131,6 +132,7 @@
                     </ul>
                     <hr>
                     {% endfor %}
+
                 </div>
 
                 <button type="button" class="btn btn-primary slide">Learn More <i class="fa fa-caret-right"></i>
