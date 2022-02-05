@@ -26,14 +26,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'mamazon.apps.MamazonConfig',
-    'cart.apps.CartConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mamazon.apps.MamazonConfig',
+    'cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [
