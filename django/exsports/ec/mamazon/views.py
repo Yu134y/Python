@@ -17,6 +17,7 @@ class ProductListView(ListView):
             queryset = queryset.filter(name__contains=qs)
         return queryset
 
+
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'mamazon/detail.html'
