@@ -24,6 +24,13 @@
                             <label for="tweet_img" class="custom-file-label">ツイート画像を選択してください</label>
                         </div>
                     </div>
+                    <div class="text-center mb-3">
+                        {% if form.instance.img %}
+                        <img src="{{ from.instance.img.url }}" height="200">
+                        {% else %}
+                        <img id="mainImage" src="" height="200">
+                        {% endif %}
+                    </div>
                     <div class="form-group">
                         {% render_field form.text class="form-control mb-3" placeholder="Tweet予定内容" %}
                     </div>
@@ -48,7 +55,7 @@
 {% endblock %}
 
 {% block js %}
-<script src="{% static 'assets/js/jquery.datetimepicker.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.datetimepicker.full.min.js' %}"></script>
 <script src="{% static 'assets/js/twitter-text.min.js' %}"></script>
 <script src="{% static 'assets/js/main.js' %}"></script>
 {% endblock %}

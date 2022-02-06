@@ -22,6 +22,17 @@
     line-height: 5rem;
 }
 
+.card-body-height {
+    height: 178px;
+}
+
+.position-create {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1;
+}
+
 @media (min-width: 768px) {
     .masthead {
         padding-top: 12rem;
