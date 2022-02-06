@@ -26,13 +26,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'mamazon.apps.MamazonConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mamazon.apps.MamazonConfig',
+    'cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +51,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,10 +119,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/')
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
-LOGIN_REDIRECT_URL = 'blog-home'
-LOGIN_URL = 'login'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
