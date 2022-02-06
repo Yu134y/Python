@@ -9,6 +9,7 @@ pillow = "*"
 tweepy = "*"
 django-environ = "*"
 django-widget-tweaks = "*"
+apscheduler = "*"
 
 [dev-packages]
 
