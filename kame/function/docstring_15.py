@@ -25,7 +25,7 @@ def divided(num1, num2):
     Returns:
         num1 / num2
     """
-    return num1/ num2
+    return num1 / num2
 
 
 # divided(1, 1)
