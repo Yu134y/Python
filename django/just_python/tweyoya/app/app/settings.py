@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
+    'scheduler.apps.SchedulerConfig',
     'account',
     'twitter',
 ]
@@ -79,19 +80,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL = 'twitter:index'
 
-LOGIN_URL = ''
+LOGIN_URL = 'account:login'
 
-LOGOUT_REDIRECT_URL = ''
+LOGOUT_REDIRECT_URL = 'account:login'
 
-SOCIAL_AUTH_TWITTER_KEY = ''
+SOCIAL_AUTH_TWITTER_KEY = env('SOCIAL_AUTH_TWITTER_KEY')
 
-SOCIAL_AUTH_TWITTER_SECRET = ''
+SOCIAL_AUTH_TWITTER_SECRET = env('SOCIAL_AUTH_TWITTER_SECRET')
 
-ACCESS_TOKEN = ''
+ACCESS_TOKEN = env('ACCESS_TOKEN')
 
-ACCESS_TOKEN_SECRET = ''
+ACCESS_TOKEN_SECRET = env('ACCESS_TOKEN_SECRET')
 
 LANGUAGE_CODE = 'ja'
 

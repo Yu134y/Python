@@ -5,6 +5,7 @@ def compute_square(num):
     return num * num
 
 
+# ()をつけないとその関数をオブジェクトとして保持する
 f = compute_square
 print(type(f))
 print(f(10))
@@ -14,16 +15,15 @@ print(function_list[-1](10))
 
 
 # 関数も引数として渡せる
-def exexute_func(func, param):
+def execute_func(func, param):
     return func(param)
 
 
-print(exexute_func(f, 10))
+print(execute_func(f, 10))
 
 
 # 関数をreturnする
 def return_func():
-
     def inner_func():
         print('This is an inner function')
     return inner_func
@@ -51,13 +51,14 @@ print(power_five(2))
 power_two = power(2)
 print(power_two(5))
 
+
 # 状態が動的
 def average():
     nums = []
 
     def inner_average(num):
         nums.append(num)
-        return  sum(nums) / len(nums)
+        return sum(nums) / len(nums)
     return inner_average
 
 

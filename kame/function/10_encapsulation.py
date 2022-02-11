@@ -1,5 +1,4 @@
 # カプセル化（encapsulation）：外からアクセスできないようにする（情報隠蔽）
-
 def casino_entrance(age, min_age=21):
     if age < min_age:
         print(f'{min_age}歳未満お断り')

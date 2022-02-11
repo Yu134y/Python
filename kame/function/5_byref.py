@@ -1,5 +1,4 @@
 # 参照渡し（byref）<->値渡し（byvalue） pythonは全て参照渡し
-
 def add_nums(a, b):
     print(f'第一引数のID:{id(a)}')
     print(f'第二引数のID:{id(b)}')

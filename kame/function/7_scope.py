@@ -10,10 +10,12 @@ print_name_local()
 # グローバル変数（モジュール変数）
 age = 30
 
+
 def print_age():
     global age
     age = 20
     print(f'I\'m {age} years old')
+
 
 print_age()
 print(age)

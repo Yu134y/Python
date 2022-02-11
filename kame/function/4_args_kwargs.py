@@ -10,6 +10,7 @@ def get_average(*args):
 average = get_average(1, 2, 3, 4, 5, 6, 7, 8)
 print(average)
 
+
 # **kwargs（dictionaryで受け取る）
 def kwargs_func(**kwargs):
     param1 = kwargs.get('param1', 1)

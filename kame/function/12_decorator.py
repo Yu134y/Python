@@ -1,5 +1,4 @@
 # Decorator：関数に機能を付属する（デコレートする）
-
 def greeting(func):
     def inner(*args, **kwargs):
         print('Hello!')
@@ -16,6 +15,7 @@ def say_name(name):
 @greeting
 def say_name_and_origin(name, origin):
     print(f"I'm {name}, I'm from {origin}")
+
 
 # say_name = greeting(say_name)
 say_name('Jiro')

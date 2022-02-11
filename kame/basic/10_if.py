@@ -47,4 +47,3 @@ elif balance >= withdrawal:
     print(f'Your balance is {balance}')
 else:
     print('You don\'t have money')
-

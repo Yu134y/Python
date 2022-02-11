@@ -12,20 +12,21 @@ def factorial(n):
 
 print(factorial(3))
 
-# challenge1：Fibonacci数を計算する関数を再帰で実装してみよう。
-# Fibonacchi数列：0, 1, 1, 2, 3, 5, 8, ...
-# 例：fibonacchi(6) = 8
 
-def fibonacchi_recursive(n):
+# challenge1：Fibonacci数を計算する関数を再帰で実装してみよう。
+# フィボナッチ数列：(0), 1, 1, 2, 3, 5, 8, ...
+# 例：fibonacci(6) = 8
+def fibonacci_recursive(n):
     if n < 2:
         return n
     else:
-        return fibonacchi_recursive(n-2) + fibonacchi_recursive(n-1)
+        return fibonacci_recursive(n-2) + fibonacci_recursive(n-1)
 
-print(fibonacchi_recursive(5))
+
+print(fibonacci_recursive(5))
+
 
 # challenge2：Fibonacci数を計算する関数を再帰なしで実装して、再帰と比べてどちらが早いか確認してみよう
-
 def fibonacci(n):
     if n < 2:
         return n
@@ -37,6 +38,7 @@ def fibonacci(n):
             n_2 = n_1
             n_1 = result
         return result
+
 
 print(fibonacci(3))
 
