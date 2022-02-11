@@ -5,6 +5,7 @@ import time
 # print(time.time())
 # print(time.time() / (60 * 60 * 24 * 365))
 
+
 @lru_cache
 def fib(n):
     print(f'fibonacci with {n} is running...')
@@ -34,6 +35,7 @@ sec = 10
 print(f'{sec}秒待ってください')
 # time.sleep(sec)
 print(f'{sec}秒経ちました')
+
 
 # challenge：関数の実行時間(sec)を図るtimerデコレータを作ろう
 
