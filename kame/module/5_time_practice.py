@@ -1,6 +1,7 @@
 from functools import lru_cache
 import time
 
+
 # .time()：1970/1/1 秒数が表示（Unix時間）
 # print(time.time())
 # print(time.time() / (60 * 60 * 24 * 365))
@@ -12,7 +13,7 @@ def fib(n):
     if n < 2:
         return n
     else:
-        return fib(n-1) + fib(n-2)
+        return fib(n - 1) + fib(n - 2)
 
 
 before = time.time()
@@ -45,6 +46,7 @@ def timer(func):
         func(*args, **kwargs)
         after = time.time()
         print(f'{func.__name__} took {after - before:.2f} sec')
+
     return inner
 
 

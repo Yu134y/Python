@@ -2,6 +2,8 @@ from .module3 import myfunc3
 # from ..subdir import module3
 # from ..subdir.module3 import myfunc3
 from .. import module1
+
+
 # from ..module1 import myfunc as module1_func
 
 def myfunc():
