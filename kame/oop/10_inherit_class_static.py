@@ -10,10 +10,6 @@ class Person:
     @classmethod
     def create_from_dob(cls, name, year, month, date):
         today = time.localtime()
-        # if (today.tm_mon, today.tm_mday) < (month, date):
-        #     age = today.tm_year - year - 1
-        # else:
-        #     age = today.tm_year - year
         age = today.tm_year - year - ((today.tm_mon, today.tm_mday) < (month, date))
         return cls(name=name, age=age)
 
@@ -36,6 +32,6 @@ print(emma.name)
 print(emily.name)
 print(emma.age)
 print(emily.age)
-print(type(john))
-print(type(emma))
-print(type(emily))
+print(type(john))  # <class '__main__.Baby'>
+print(type(emma))  # <class '__main__.Baby'>
+print(type(emily))  # <class '__main__.Person'>

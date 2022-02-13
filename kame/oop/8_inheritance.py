@@ -19,14 +19,6 @@ class Dog(Animal):
         print('Dog init is called')
 
 
-# class Cat(Animal):
-#     pass
-#
-#
-# class Bird(Animal):
-#     pass
-
-
 pochi = Dog('pochi')
 print(pochi.name)
 pochi.breath()

@@ -40,9 +40,6 @@ from car import Car
 #         print(f'最大積載量({self.max_capacity}kg)をオーバーしています')
 #
 #
-#
-#
-#
 # prius = Truck('Prius', 20, 'TOYOTA', 2000, 1000)
 # prius.stack_load(20000)
 # prius.take_load(10000)

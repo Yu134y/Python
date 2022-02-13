@@ -10,11 +10,19 @@ class MyClass:
         return 'MyClassの__str__'
 
 
-def printvalue(arg):
+mc = MyClass()
+print(mc)  # mc.__str__()
+print(1)  # 1.__str__()
+print('1')  # '1'.__str__()
+print(True)  # True.__str__()
+print([1, 2, 3])  # [1, 2, 3].__str__()
+
+
+def print_value(arg):
     print(arg + 1)
 
 
-printvalue(True)
+print_value(True)
 
 various_types = [1, '1', True, [1, 2, 3], (1,), {'1': 1}, {1}]
 # for elem in various_types:

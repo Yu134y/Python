@@ -18,6 +18,7 @@ class Duck:
         quack: print ***
         fly: print ***
     """
+
     def __init__(self, name):
         """
         The constructor for Duck class
@@ -43,7 +44,7 @@ class Penguin:
         print('walking...')
 
     def quack(self):
-        print('quack quack...')
+        print('quack quack...??')
 
     def swim(self):
         print('Swimming!')
