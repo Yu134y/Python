@@ -8,23 +8,23 @@
 # クラスメソッド内でインスタンスを生成して返すことも可能
 
 class MyClass:
+    class_method_count = 0
 
-    classmethod_count = 0
-
-    def mymethod(self):
+    def my_method(self):
         print('This is normal method! from {}'.format(self))
 
     @staticmethod
-    def mystaticmethod():
+    def my_static_method():
         print('This is staticmethod!')
 
     @classmethod
-    def myclassmethod(cls):
-        cls.classmethod_count += 1
-        print(f'This is classmethod and now the count is {cls.classmethod_count}')
+    def my_class_method(cls):
+        cls.class_method_count += 1
+        print(f'This is classmethod and now the count is {cls.class_method_count}')
+
 
 c = MyClass()
-c.mymethod()
-MyClass.mystaticmethod()
-MyClass.myclassmethod()
-c.myclassmethod()
+c.my_method()
+MyClass.my_static_method()
+MyClass.my_class_method()
+c.my_class_method()

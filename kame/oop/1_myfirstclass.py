@@ -1,3 +1,5 @@
+# 全てのクラスはobjectを継承している
+# デフォルトで(object)は継承されている
 class Person(object):  # クラス名はCamelCase
 
     num_legs = 2

@@ -10,18 +10,20 @@ import time
 
 class MyClass:
 
-    def mymethod(self):
+    def my_method(self):
         print('This is normal method! from {}'.format(self))
 
     @staticmethod
-    def mystaticmethod():
+    def my_staticmethod():
         print('This is staticmethod!')
 
 
 c = MyClass()
-c.mymethod()
-MyClass.mystaticmethod()
-# c.mystaticmethod()  # こういう形で呼ぶ必要はない
+c.my_method()
+MyClass.my_staticmethod()
+
+
+# c.my_staticmethod()  # こういう形で呼ぶ必要はない
 
 
 # challenge：前回のchallengeで作成したAccountクラスに、取引（transaction）を記録する仕組みを追加する
@@ -30,7 +32,6 @@ MyClass.mystaticmethod()
 # '日時'を作る関数をstaticmethodで作ってみよう
 
 class Account:
-
     count = 0
 
     def __init__(self, name, balance):
@@ -54,7 +55,6 @@ class Account:
         self.add_transaction(price)
 
     def show_balance(self):
-        # print(f'{self,name}の残高は{self.balance}円です')
         print('{0.name}（口座番号：{0.account_number})の残高は{0.balance}円です'.format(self))
 
     def add_transaction(self, price):
@@ -78,10 +78,10 @@ class Account:
             print(', '.join(transaction_str_list))
 
 
-myaccount = Account(name='my account', balance=1000)
-print(myaccount.balance)
-myaccount.withdraw(300)
-myaccount.deposit(500)
-myaccount.withdraw(1500)
-print(myaccount.transaction_history)
-myaccount.show_transaction_history()
+my_account = Account(name='my account', balance=1000)
+print(my_account.balance)
+my_account.withdraw(300)
+my_account.deposit(500)
+my_account.withdraw(1500)
+print(my_account.transaction_history)
+my_account.show_transaction_history()

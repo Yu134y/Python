@@ -55,13 +55,13 @@
 
 # 正解
 class Account:
-
     count = 0
 
     def __init__(self, name, balance):
         self.name = name
         self.balance = balance
         self.account_number = Account.count
+        self.show_balance()
         Account.count += 1
 
     def withdraw(self, price):
@@ -80,11 +80,11 @@ class Account:
         print('{0.name}（口座番号：{0.account_number})の残高は{0.balance}円です'.format(self))
 
 
-myaccount = Account(name='my account', balance=1000)
-print(myaccount.name)
-print(myaccount.balance)
-myaccount.withdraw(300)
-myaccount.deposit(500)
-myaccount.withdraw(1500)
-youraccount = Account(name='your account', balance=10000)
-youraccount.deposit(5000)
+my_account = Account(name='my account', balance=1000)
+print(my_account.name)
+print(my_account.balance)
+my_account.withdraw(300)
+my_account.deposit(500)
+my_account.withdraw(1500)
+your_account = Account(name='your account', balance=10000)
+your_account.deposit(5000)
