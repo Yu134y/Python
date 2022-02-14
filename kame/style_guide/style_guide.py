@@ -98,7 +98,7 @@ print('このように表示する文章が違ったり長かったりする場�
 a = 100000000000000000000000 \
     + 100000000000000000 \
     + 100000000 \
-    +10000000000
+    + 10000000000
 
 # wrong
 a = 100000000000000000000000 +\
@@ -116,7 +116,8 @@ def func2():
     pass
 
 
-class Myclass:
+# クラス内のメソッド間は一行開ける
+class MyClass:
     def __init__(self):
         pass
 
@@ -139,7 +140,7 @@ from subprocess import Popen, PIPE
 # 1．Standard library(time, sys)
 # 2. Third party(numpy, pandas)
 # 3. our library
-# 4. Local lobrary
+# 4. Local library
 # それぞれ一行開ける(abc順)
 
 # absolute import
@@ -177,6 +178,8 @@ if balance > withdraw:
 # - __xxx：クラスの属性として使うことで名前修飾される
 # - __xxx__：magic methodと呼ばれるもので、Pythonが特別に設定しているもの、開発者定義することはない
 # - _：最近実行した戻り値や、iterationに使わない変数
+for _ in range(10):
+    print('hello!')
 
 
 # l, I, O：一文字の変数は1や0に見間違えるので使わない
@@ -187,8 +190,9 @@ length = len('letter')
 l = len('letter')
 
 
-# Constants（宣言後変更しない変数）は大文字のsnakecaseを使う
+# Constants（宣言後変更しない変数）は大文字のsnake_caseを使う
 PI = 3.14
+# 変更できないわけではない
 PI = 3
 
 
@@ -202,10 +206,10 @@ def foo(x):
 
 # オブジェクトタイプの確認はisinstance()を使う
 # correct
-if isinstance(obj, int)
+if isinstance(obj, int):
 
 # wrong
-if type(obj) is type(1)
+if type(obj) is type(1):
 
 
 # Booleanに対して比較演算子を使わない
@@ -218,7 +222,7 @@ if bool_var == True:
 
 
 # type hint
-def greeting(name: str) -> srt:
+def greeting(name: str) -> str:
     return 'Hello ' + name
 # 一つでもhintをつけたら全てにつける
 # Pythonがtypeのチェックをしてくれるわけではない
