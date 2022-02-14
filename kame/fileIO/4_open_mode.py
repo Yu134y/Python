@@ -13,7 +13,7 @@ with open('writing_file.txt', mode='r+') as f:
 with open('writing_file.txt', mode='w+') as f:
     print(f.read())
     f.write('You can write and read with w+ mode!!')
-    f.seek(0)
+    f.seek(0)  # positionを先頭にする
     print(f.read())
 
 # mode='a+'：読み書きどちらも可能で、positionが最後尾から始まる
