@@ -1,3 +1,8 @@
+# 例外(Exception)
+# ・例外が起きると、プログラムはクラッシュする
+# ・例外が起きる可能性がある場合は、例外を処理(exception handling)する必要がある
+# ・Pythonにはすでに色々な例外がクラスとして定義されている(https://docs.python.org/3/library/exceptions.html)
+
 def split_bill(price):
     num = input('何人で割り勘しますか？')
     try:

@@ -16,3 +16,10 @@ def split_bill(price):
 
 if __name__ == '__main__':
     split_bill(10000)
+
+# finally:が実行されるタイミング
+# ・tryでキャッチされない例外が発生した場合でもfinally:を実行してから例外を発生する
+# ・except:やelse:で例外が発生しても、finally:の実行後に例外を発生する
+# ・tryやbreakやcontinue、returnに達しても、その前にfinally:が実行される
+# ・try:とfinally:にreturnがある場合、finally:のreturnが返される
+# finallyのタイミングは複雑なので、必ず簡単なコードで試すこと
