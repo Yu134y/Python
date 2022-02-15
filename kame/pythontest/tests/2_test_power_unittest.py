@@ -5,7 +5,7 @@
 # ・pytest：テストフレームワーク。非常に有名で多くのプロジェクトで利用されている
 
 import unittest
-from power import power, times
+from pythontest.power import power, times
 
 
 class TestMyMethod(unittest.TestCase):

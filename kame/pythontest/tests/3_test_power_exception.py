@@ -4,7 +4,7 @@
 # withステートメントを使ってテストする
 
 import unittest
-from power import power, times
+from pythontest.power import power, times
 
 
 class TestMyMethod(unittest.TestCase):

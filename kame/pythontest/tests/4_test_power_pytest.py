@@ -7,7 +7,7 @@
 
 
 import pytest
-from power import power, times, divide
+from pythontest.power import power, times, divide
 
 
 def test_power():

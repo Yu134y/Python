@@ -1,4 +1,4 @@
-from power import power, times
+from pythontest.power import power, times
 
 
 def test_power():
@@ -13,6 +13,7 @@ def test_times():
     assert times(num1, num2) == 6, 'This should be 6'
 
 
+# これだとtest_poser()でエラーが出たらtest_times()が実行されず全てチェックできない
 if __name__ == '__main__':
     test_power()
     test_times()
