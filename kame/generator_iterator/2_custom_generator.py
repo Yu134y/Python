@@ -1,31 +1,32 @@
 # range(10)
-def myrange(stop):
+def my_range(stop):
     start = 0
     while start < stop:
         yield start
         start += 1
 
+
 # yield
 # returnの代わりにyieldを使うと、その関数はgenerator(generator function)になる
 # generator functionの戻り値はgenerator iteratorと呼ばれるもので、イテレーションによりyieldの値を返すオブジェクトになる
 
-# mr = myrange(10)
-# print(type(mr))
-# print(next(mr))
-# print(next(mr))
-# print(next(mr))
-# print(next(mr))
-# print(next(mr))
+# mr = my_range(10)
+# print(type(mr))  # generator
+# print(next(mr))  # 0
+# print(next(mr))  # 1
+# print(next(mr))  # 2
+# print(next(mr))  # 3
+# print(next(mr))  # 4
 # print('end of next()')
-# print(next(mr))
-# print(next(mr))
-# print(next(mr))
-# print(next(mr))
+# print(next(mr))  # 5
+# print(next(mr))  # 6
+# print(next(mr))  # 7
+# print(next(mr))  # 8
 # print(next(mr))  # 9
 # print(next(mr))
 
 # print('beginning of for loop')
-# for i in myrange(10):
+# for i in my_range(10):
 #     print(i)
 
 

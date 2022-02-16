@@ -15,8 +15,8 @@ print(list_nums)
 # for i in list_nums:
 #     print(i)
 
-print(sys.getsizeof(range_nums))
-print(sys.getsizeof(list_nums))
+print(sys.getsizeof(range_nums))  # 48(必要な時にメモリに置くため節約できる)
+print(sys.getsizeof(list_nums))  # 216(全てをメモリに置くため節約できない)
 
 with open('example.csv') as f:
     reader = csv.DictReader(f)

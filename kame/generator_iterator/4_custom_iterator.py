@@ -11,13 +11,13 @@ class MyIterator:
         return self
 
 
-# myiterator = MyIterator(10)
-# print(next(myiterator))
-# print(next(myiterator))
-# print(next(myiterator))
-# print(next(myiterator))
-# print(id(myiterator))
-# print(id(iter(myiterator)))
+# my_iterator = MyIterator(10)
+# print(next(my_iterator))  # 10
+# print(next(my_iterator))  # 11
+# print(next(my_iterator))  # 12
+# print(next(my_iterator))  # 13
+# print(id(my_iterator))
+# print(id(iter(my_iterator)))
 
 
 # challenge：指定した数字から2までの偶数の値を返すiteratorを作ってみよう（generator関数を使わずに）
@@ -60,12 +60,12 @@ class EvenIterator:
     def __iter__(self):
         return self
 
+
 if __name__ == '__main__':
     even = EvenIterator(10)
-    print(next(even))
-    print(next(even))
-    print(next(even))
-    print(next(even))
-    print(next(even))
-    print(next(even))
-
+    print(next(even))  # 10
+    print(next(even))  # 8
+    print(next(even))  # 6
+    print(next(even))  # 4
+    print(next(even))  # 2
+    print(next(even))  # StopIteration
