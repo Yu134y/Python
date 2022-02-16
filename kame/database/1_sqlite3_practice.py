@@ -19,5 +19,5 @@ INSERT INTO User VALUES(1, 'John', 'john@gmail.com', 30);
 INSERT INTO User VALUES(2, 'Emily', 'emily@gmail.com', 28);
 INSERT INTO User VALUES(3, 'Taro', 'taro@gmail.com', 25);
 """
-cursor.executescript(insert_user_query)
-con.commit()
+cursor.executescript(insert_user_query)  # 複数行のexecuteを投げることができる
+con.commit()  # コミットすることで実行される
